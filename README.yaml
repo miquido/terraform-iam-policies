@@ -1,0 +1,22 @@
+name: miquido-iam-policies
+bitbucket_repo: miquido/terraform-iam-policies
+badges: []
+related: []
+description: |-
+  The module provisions:
+
+  - IAM policies allowing for AWS keys management, permiting password change and MFA enforcing
+
+usage: |-
+  ```hcl
+  module "iam-policies" {
+    source = "./modules/iam-policies"
+    strict_mfa_enabled = true
+  }
+  ```
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+contributors:
+  - name: "Konrad Obal"
+    github: "k911"
