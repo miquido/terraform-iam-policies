@@ -87,7 +87,7 @@ data "aws_iam_policy_document" "strict-mfa" {
       "iam:CreateVirtualMFADevice",
       "iam:DeleteVirtualMFADevice",
     ]
-    resources = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/$${aws:username}"]
+    resources = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:mfa/$${aws:username}"]
   }
 
   statement {
