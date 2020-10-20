@@ -57,6 +57,26 @@ data "aws_iam_policy_document" "strict-mfa" {
   }
 
   statement {
+    sid    = "AllowIndividualUserToManageAccessKeysOnlyWhenUsingMFA"
+    effect = "Allow"
+    actions = [
+      "iam:CreateAccessKey",
+      "iam:DeleteAccessKey",
+      "iam:ListAccessKeys",
+      "iam:UpdateAccessKey",
+    ]
+    resources = [
+      "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/$${aws:username}",
+    ]
+
+    condition {
+      test     = "Bool"
+      variable = "aws:MultiFactorAuthPresent"
+      values   = ["true"]
+    }
+  }
+
+  statement {
     sid    = "DenyAllExceptListedIfNoMFA"
     effect = "Deny"
     not_actions = [
