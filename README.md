@@ -14,8 +14,9 @@ module "iam-policies" {
   strict_mfa_enabled = true
 }
 ```
+<!-- markdownlint-disable -->
 ## Makefile Targets
-```
+```text
 Available targets:
 
   help                                Help screen
@@ -24,29 +25,45 @@ Available targets:
   lint                                Lint Terraform code
 
 ```
+<!-- markdownlint-restore -->
+<!-- markdownlint-disable -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+| aws | => 2.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | => 2.0 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| path | Path in which to create the policy. See IAM Identifiers for more information. | string | `/policies/` | no |
-| strict_mfa_enabled | Whether to create Strict MFA policy | bool | `true` | no |
-| strict_mfa_name | Name prefix of Strict MFA Policy | string | `StrictMFA` | no |
+|------|-------------|------|---------|:--------:|
+| path | Path in which to create the policy. See IAM Identifiers for more information. | `string` | `"/policies/"` | no |
+| strict\_mfa\_enabled | Whether to create Strict MFA policy | `bool` | `true` | no |
+| strict\_mfa\_name | Name prefix of Strict MFA Policy | `string` | `"StrictMFA"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| strict_mfa_arn | The ARN assigned by AWS to this policy. |
-| strict_mfa_id | The policy's ID. |
-| strict_mfa_name | The name of the policy. |
+| strict\_mfa\_arn | The ARN assigned by AWS to this policy. |
+| strict\_mfa\_id | The policy's ID. |
+| strict\_mfa\_name | The name of the policy. |
 
+<!-- markdownlint-restore -->
 
 
 ## Developing
 
 1. Make changes in terraform files
 
-2. Regerate documentation
+2. Regenerate documentation
 
     ```bash
     bash <(curl -s https://terraform.s3.k.miquido.net/update.sh)
@@ -76,5 +93,7 @@ Copyright © 2017-2020 [Miquido](https://miquido.com)
 
   [logo]: https://www.miquido.com/img/logos/logo__miquido.svg
   [website]: https://www.miquido.com/
+  [gitlab]: https://gitlab.com/miquido
   [github]: https://github.com/miquido
   [bitbucket]: https://bitbucket.org/miquido
+
