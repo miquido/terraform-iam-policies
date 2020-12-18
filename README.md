@@ -32,13 +32,13 @@ Available targets:
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13 |
-| aws | => 2.0 |
+| aws | >= 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | => 2.0 |
+| aws | >= 2.0 |
 
 ## Inputs
 
@@ -66,7 +66,7 @@ Available targets:
 2. Regenerate documentation
 
     ```bash
-    bash <(curl -s https://terraform.s3.k.miquido.net/update.sh)
+    bash <(git archive --remote=git@gitlab.com:miquido/terraform/terraform-readme-update.git master update.sh | tar -xO)
     ```
 
 3. Run lint
