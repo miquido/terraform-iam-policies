@@ -1,5 +1,6 @@
 name: miquido-iam-policies
-bitbucket_repo: miquido/terraform-iam-policies
+repos:
+  gitlab: miquido/terraform/miquido-iam-policies
 badges: []
 related: []
 description: |-
