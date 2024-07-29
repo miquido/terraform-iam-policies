@@ -18,6 +18,4 @@ usage: |-
 include:
   - "docs/targets.md"
   - "docs/terraform.md"
-contributors:
-  - name: "Konrad Obal"
-    github: "k911"
+license: "MIT"
